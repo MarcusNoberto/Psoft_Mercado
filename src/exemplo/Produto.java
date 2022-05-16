@@ -11,7 +11,7 @@ public class Produto {
 
 	public Produto(String nome, String fabricante) {
 		this.id = UUID.randomUUID().toString();
-		this.nome = nome;
+		this.nome = nome.toLowerCase();
 		this.fabricante = fabricante;
 	}
 	
@@ -28,7 +28,7 @@ public class Produto {
 	}
 	
 	public String toString() {
-		return "Produto ID: " + getId() + " - Fabricante: " + getFabricante();
+		return "Produto : " + nome + " Produto ID: " + getId() + " - Fabricante: " + getFabricante();
 	}
 
 	public void setNome(String nome) {

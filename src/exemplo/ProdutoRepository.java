@@ -1,6 +1,7 @@
 package exemplo;
 
 import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class ProdutoRepository {
@@ -30,6 +31,16 @@ public class ProdutoRepository {
 		String lista = "";
 		for (Produto produto: catalogo.values()) {
 			lista += produto.toString() + "\n";
+		}
+		return lista;
+	}
+	
+	public ArrayList getProdutoByName(String produtoNome) {
+		ArrayList<Produto> lista = new ArrayList();
+		for (Produto produto : catalogo.values()) {
+			if (produto.getNome().contains(produtoNome.toLowerCase())) {
+				lista.add(produto);
+			}
 		}
 		return lista;
 	}
